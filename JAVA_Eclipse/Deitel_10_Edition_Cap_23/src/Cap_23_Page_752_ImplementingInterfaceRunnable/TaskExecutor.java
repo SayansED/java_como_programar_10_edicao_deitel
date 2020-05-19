@@ -1,0 +1,35 @@
+package Cap_23_Page_752_ImplementingInterfaceRunnable;
+
+// Usando um ExecutorService para executar Runnable.
+import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
+
+public class TaskExecutor {
+
+	public static void main(String[] args) {
+		
+		// Cria e nomeia cada executável
+		PrintTask task1 = new PrintTask("task1");
+		PrintTask task2 = new PrintTask("task2");
+		PrintTask task3 = new PrintTask("task3");
+		
+		System.out.println("Starting Executor");
+		
+		// Cria ExecutorService para gerenciar threads
+		/* Método newCachedThreadPool para obter um ExecutorService que é capaz de criar novas thread
+		 * à medida que são necessárias, pelo aplicativo. Essas threads são usadas pelo ExecutorService para 
+		 * executar Runnables */
+		 ExecutorService executorService = Executors.newCachedThreadPool();
+		
+		// Inicia as três PrintTasks
+		 executorService.execute(task1); // Inicia task1
+		 executorService.execute(task2); // Inicia task2
+		 executorService.execute(task3); // Inicia task3
+		 
+		 // Fecha ExecutorService -- ele decide quando fechar threads
+		 executorService.shutdown(); /* Para parar de aceitar novas tarefas, mas continua executando as 
+		 tarefas que já foram submetidas*/
+		 
+		 System.out.printf("Tasks started, main ends.%n%n");
+	}
+} // End class

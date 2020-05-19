@@ -1,0 +1,41 @@
+package Cap_23_Page_752_ImplementingInterfaceRunnable;
+
+// Classe PrintTask dorme por um tempo aleatório de 0 a 5 segundos
+import java.security.SecureRandom;
+
+import com.sun.source.tree.CatchTree;
+import com.sun.source.tree.TryTree;
+
+public class PrintTask implements Runnable{
+	
+	private static final SecureRandom generator = new SecureRandom();
+	private final int sleepTime; // Tempo de adormecimento aleatório para a thread
+	private final String taskName;
+	
+	public PrintTask(String taskName) {
+		this.taskName = taskName;
+		
+		// Seleciona o tempo de adormecimento aleatório entre 0 e 5 segundos
+		sleepTime = generator.nextInt(5000); // milessegundos
+	}
+	
+	// Método run contém o código que uma thread executará
+	@Override
+	public void run() {
+		// try catch necessário porque o método sleep pode lançar uma exceção verificada do tipo InterruptedException
+		try { // Colcoa a thread para dormir pela quantidade de tempo sleepTime
+			System.out.printf("%s going to sleep for %d milleseconds.%n",
+					taskName, sleepTime);
+			Thread.sleep(sleepTime);
+		}
+		catch (InterruptedException exception) {
+			exception.printStackTrace();
+			// currentThread otém uma referência à Thread em execução
+			Thread.currentThread().interrupt(); // Reinterrompe a thread
+		}
+		
+		// Impreme o nome da tarefa
+		System.out.printf("%s done sleeping%n", taskName);
+		
+	}
+} // End class

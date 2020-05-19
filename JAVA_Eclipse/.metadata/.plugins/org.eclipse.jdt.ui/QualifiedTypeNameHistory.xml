@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="PatternStrategyStrategies.StrategyCalcLucro"/>
+<fullyQualifiedTypeName name="PatternStrategyStrategies.StrategyCalcLoss"/>
+<fullyQualifiedTypeName name="PatternStrategyStrategies.StrategyCalculation"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.sun.source.tree.TryTree"/>
+<fullyQualifiedTypeName name="com.sun.source.tree.CatchTree"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="Cap_23_Page_752_ImplementingInterfaceRunnable.PrintTask"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ExecutorService"/>
+</qualifiedTypeNameHistroy>
